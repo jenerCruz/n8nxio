@@ -33,7 +33,9 @@ fly secrets set \
 
 🚀 Despliegue
 
+ ~~~bash
 fly deploy --remote-only -a n8nxio
+ ~~~
 
 📂 Persistencia
 
