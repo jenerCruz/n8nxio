@@ -66,8 +66,6 @@ ___
 
 ## 💡 Tips
 
-___
-
 Exporta workflows y credenciales regularmente desde Settings → Export
 
 Guarda tu N8N_ENCRYPTION_KEY en un lugar seguro
