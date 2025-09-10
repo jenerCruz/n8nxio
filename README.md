@@ -1,4 +1,4 @@
- n8nxio en Fly.io
+## n8nxio en Fly.io
 
 Despliegue optimizado de [n8n](https://n8n.io) en Fly.io con persistencia, autostop/autostart y configuración lista para clonar.
 
@@ -20,7 +20,9 @@ Despliegue optimizado de [n8n](https://n8n.io) en Fly.io con persistencia, autos
   ```bash
   fly volumes create n8n_data --size 1 -a n8nxio
 
-🔐 Variables de entorno recomendadas
+---
+
+## 🔐 Variables de entorno recomendadas
 
   ~~~bash
 fly secrets set \
@@ -31,13 +33,17 @@ fly secrets set \
   -a n8nxio
  ~~~
 
-🚀 Despliegue
+___
+
+## 🚀 Despliegue
 
  ~~~bash
 fly deploy --remote-only -a n8nxio
  ~~~
 
-📂 Persistencia
+___
+
+## 📂 Persistencia
 
 El volumen n8n_data almacena:
 
@@ -45,15 +51,22 @@ Workflows
 
 Credenciales cifradas
 
+
 Configuración de usuario
 
-🔗 Acceso
+___
+
+## 🔗 Acceso
 
 https://n8nxio.fly.dev
 
 Usuario y contraseña se configuran en el primer arranque o vía variables de entorno.
 
-💡 Tips
+___
+
+## 💡 Tips
+
+___
 
 Exporta workflows y credenciales regularmente desde Settings → Export
 
@@ -61,7 +74,9 @@ Guarda tu N8N_ENCRYPTION_KEY en un lugar seguro
 
 Considera usar PostgreSQL/Supabase para persistencia multi-región
 
-📜 Licencia
+___
+
+## 📜 Licencia
 
 Este proyecto se distribuye bajo licencia MIT.
 
