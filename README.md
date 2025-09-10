@@ -22,6 +22,7 @@ Despliegue optimizado de [n8n](https://n8n.io) en Fly.io con persistencia, autos
 
 🔐 Variables de entorno recomendadas
 
+  ```bash
 fly secrets set \
   N8N_ENCRYPTION_KEY="TU_CLAVE_UNICA" \
   DB_SQLITE_POOL_SIZE=5 \
