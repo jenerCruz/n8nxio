@@ -3,9 +3,7 @@
 Despliegue optimizado de [n8n](https://n8n.io) en Fly.io con persistencia, autostop/autostart y configuración lista para clonar.
 
 <img width="600" height="600" alt="17577709286963986807963771623432" src="https://github.com/user-attachments/assets/31ca2e28-6191-473e-b946-71d8a3c2dc23" />
-
----
-<img width="1200" height="697" alt="17577707462026566156493515142811" src="https://github.com/user-attachments/assets/e82615b4-1bab-4b91-b430-d791906a85ff" />
+___
 
 ## 📦 Características principales
 - **Persistencia garantizada** con volumen `n8n_data` en `/home/node/.n8n`
