@@ -1,22 +1,28 @@
 FROM node:lts-alpine
 
-# pass N8N_VERSION Argument while building or use default
+# Versión de n8n
 ARG N8N_VERSION=1.39.1
 
-# Update everything and install needed dependencies
+# Instala dependencias necesarias
 RUN apk add --update graphicsmagick tzdata
 
-# Set a custom user to not have n8n run as root
+# Usuario root para instalación
 USER root
 
-# Install n8n and also all temporary packages
-# it needs to build it correctly.
-RUN apk --update add --virtual build-dependencies python3 build-base && \
-	npm_config_user=root npm install --location=global n8n@${N8N_VERSION} && \
-	apk del build-dependencies
-
-# Specifying work directory
+# Crea carpeta de trabajo
 WORKDIR /data
 
-# define execution entrypoint
+# Copia el package.json con los 200 nodos comunitarios
+COPY package.json ./
+
+# Instala n8n y nodos comunitarios
+RUN apk --update add --virtual build-dependencies python3 build-base && \
+    npm_config_user=root npm install --location=global n8n@${N8N_VERSION} && \
+    npm install && \
+    apk del build-dependencies
+
+# Usuario seguro
+USER node
+
+# Entrypoint
 CMD ["n8n"]
