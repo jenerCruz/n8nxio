@@ -1,0 +1,11 @@
+{
+  "name": "n8n-nodes-mi-nodo",
+  "version": "1.0.0",
+  "description": "Nodo personalizado para n8n",
+  "main": "nodes/MiNodo/MiNodo.node.ts",
+  "scripts": {},
+  "keywords": ["n8n", "node"],
+  "author": "Eduardo",
+  "license": "MIT",
+  "dependencies": {}
+}
