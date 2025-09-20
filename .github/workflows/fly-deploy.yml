@@ -1,18 +1,25 @@
-# See https://fly.io/docs/app-guides/continuous-deployment-with-github-actions/
+cat > .github/workflows/fly-deploy.yml << 'EOF'
+name: 🚀 Deploy to Fly.io
 
-name: Fly Deploy
 on:
   push:
     branches:
       - main
+
 jobs:
   deploy:
-    name: Deploy app
     runs-on: ubuntu-latest
-    concurrency: deploy-group    # optional: ensure only one action runs at a time
     steps:
-      - uses: actions/checkout@v4
-      - uses: superfly/flyctl-actions/setup-flyctl@master
-      - run: flyctl deploy --remote-only
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Fly CLI
+        uses: superfly/flyctl-actions@1.1
+        with:
+          version: latest
+
+      - name: Deploy to Fly.io
+        run: fly deploy --remote-only -a n8nxio
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+EOF
