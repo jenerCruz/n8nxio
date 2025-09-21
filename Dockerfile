@@ -19,6 +19,9 @@ RUN apk --update add --virtual build-dependencies python3 build-base && \
 # Specifying work directory
 WORKDIR /data
 
+ENV N8N_HOST=0.0.0.0
+ENV N8N_TRUST_PROXY=true
+ENV N8N_PORT=5678
+ENV N8N_BASIC_AUTH_ACTIVE=true
 # define execution entrypoint
 CMD ["n8n"]
-~/n8nxio/n8nxio $
