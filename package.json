@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@green-api/whatsapp-api-client": "^0.4.4",
+    "content-disposition-attachment": "^0.3.1",
+    "debug": "^4.4.3",
+    "gmail-getter": "^2.3.1",
+    "n8n-nodes-discord": "^0.5.0",
+    "n8n-nodes-excel": "^1.2.7"
+  }
+}
