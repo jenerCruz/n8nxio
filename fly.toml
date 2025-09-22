@@ -13,7 +13,7 @@ primary_region = 'qro'
   GENERIC_TIMEZONE = 'America/Mexico_City'
   WEBHOOK_TUNNEL_URL = 'https://n8nxio.fly.dev'
   N8N_PORT=5678
-N8N_HOST="n8nxio.fly.io"
+N8N_HOST="0.0.0.0"
 
 [[mounts]]
   source = 'n8n_data'
