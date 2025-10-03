@@ -7,7 +7,7 @@ app = 'n8nxio'
 primary_region = 'qro'
 
 [build]
-  image = 'n8nio/n8n'
+  image = "jenercruz/n8nxio:main"
 
 [env]
   GENERIC_TIMEZONE = 'America/Mexico_City'
