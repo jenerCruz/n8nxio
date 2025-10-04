@@ -4,7 +4,7 @@
 #
 
 app = 'n8nxio'
-primary_region = 'grl'
+primary_region = 'qro'
 
 [build]
   image = "jenercruz/n8nxio:main"
@@ -42,7 +42,3 @@ N8N_HOST="0.0.0.0"
   memory = '1gb'
   cpu_kind = 'shared'
   cpus = 1
-
-[scale]
-min_machines_rruning = 0
-max_machines_running = 1
