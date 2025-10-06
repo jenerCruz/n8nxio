@@ -4,7 +4,7 @@
 #
 
 app = 'n8nxio'
-primary_region = 'qro'
+primary_region = 'iad'
 
 [build]
 image = "n8nio/n8n"
