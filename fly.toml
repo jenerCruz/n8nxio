@@ -46,7 +46,3 @@ primary_region = 'grl'
   cpu_kind = 'shared'
   cpus = 1
 
-[scale]
-min_machines_running = 0
-max_machines_running= 1
-
