@@ -1,10 +1,12 @@
+
+
 # fly.toml app configuration file generated for n8nxio on 2025-09-10T04:22:28Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
 app = 'n8nxio'
-primary_region = 'qro'
+primary_region = 'grl'
 
 [build]
   image = "jenercruz/n8nxio:main"
@@ -13,7 +15,7 @@ primary_region = 'qro'
   GENERIC_TIMEZONE = 'America/Mexico_City'
   WEBHOOK_TUNNEL_URL = 'https://n8nxio.fly.dev'
   N8N_PORT=5678
-N8N_HOST="0.0.0.0"
+N8N_HOST="n8nxio.fly.dev"
 
 [[mounts]]
   source = 'n8n_data'
@@ -42,3 +44,8 @@ N8N_HOST="0.0.0.0"
   memory = '1gb'
   cpu_kind = 'shared'
   cpus = 1
+
+[scale]
+min_machines_running = 0
+max_machines_running= 1
+
