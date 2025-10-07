@@ -1,48 +1,44 @@
-
-
-
-# fly.toml app configuration file generated for n8nxio on 2025-09-10T04:22:28Z
-#
-# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
-#
-
-app = 'n8nxio'
-primary_region = 'grl'
+app = "n8nxio"
+primary_region = "iad"
 
 [build]
   image = "jenercruz/n8nxio:main"
 
 [env]
-  GENERIC_TIMEZONE = 'America/Mexico_City'
-  WEBHOOK_TUNNEL_URL = 'https://n8nxio.fly.dev'
-  N8N_PORT=5678
-  N8N_HOST="n8nxio.fly.dev"
+  GENERIC_TIMEZONE = "America/Mexico_City"
+  WEBHOOK_TUNNEL_URL = "https://n8nxio.fly.dev"
+  N8N_HOST = "0.0.0.0"
+  N8N_LOG_LEVEL = "error"
+  N8N_PROTOCOL = "https"
+  N8N_EDITOR_BASE_URL = "https://n8nxio.fly.dev"
+  N8N_RUNNERS_ENABLED = true
+  N8N_BLOCK_ENV_IN_NODE = false
+  N8N_PORT = 5678
 
 [[mounts]]
-  source = 'n8n_data'
-  destination = '/home/node/.n8n'
+  source = "n8n_data"
+  destination = "/home/node/.n8n"
 
 [http_service]
   internal_port = 5678
   force_https = true
-  auto_stop_machines = 'stop'
+  auto_stop_machines = true
   auto_start_machines = true
 
 [http_service.concurrency]
-    type = 'requests'
-    hard_limit = 250
-    soft_limit = 200
+  type = "requests"
+  hard_limit = 250
+  soft_limit = 200
 
 [[services.ports]]
-    port = 80
-    handlers = ['http']
+  port = 80
+  handlers = ["http"]
 
-  [[services.ports]]
-    port = 443
-    handlers = ['tls', 'http']
+[[services.ports]]
+  port = 443
+  handlers = ["tls", "http"]
 
 [[vm]]
-  memory = '1gb'
-  cpu_kind = 'shared'
+  memory = "1gb"
+  cpu_kind = "shared"
   cpus = 1
-
