@@ -1,0 +1,12 @@
+  < ?xpacket begin = '' id = 'W5M0MpCehiHzreSzNTczkc9d'? > < x:xmpmeta xmlns:x = 'adobe:ns:meta/' x:xmptk = 'Adobe XMP Core 5.6' > < rdf:RDF xmlns:rdf = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#' > < rdf:Description xmlns:crs = 'http://ns.adobe.com/camera-raw-settings/1.0/'
+crs:PresetType = 'Normal'
+crs:Cluster = 'Realistic Pet Portrait'
+crs:SupportsAmount = 'True'
+crs:SupportsColor = 'True'
+crs:SupportsMonochrome = 'True'
+crs:CameraModelRestriction = 'All'
+crs:Copyright = 'ChatGPT Realistic Pet Preset'
+crs:Version = '13.0' > < crs:Name > Realismo Mascotas Interior</crs:Name > < crs:Exposure2012 > 0.15</crs:Exposure2012 > < crs:Contrast2012 > 8</crs:Contrast2012 > < crs:Highlights2012>-6</crs:Highlights2012 > < crs:Shadows2012 > 12</crs:Shadows2012 > < crs:Whites2012 > 5</crs:Whites2012 > < crs:Blacks2012>-4</crs:Blacks2012 > < crs:Texture > 10</crs:Texture > < crs:Clarity2012 > 18</crs:Clarity2012 > < crs:Vibrance > 6</crs:Vibrance > < crs:Saturation > 4</crs:Saturation > < crs:Sharpness > 12</crs:Sharpness > < crs:LuminanceSmoothing > 10</crs:LuminanceSmoothing > < crs:LuminanceDetail > 40</crs:LuminanceDetail > < crs:ColorNoiseReduction > 25</crs:ColorNoiseReduction > < crs:ToneCurveName2012 > Medium Contrast</crs:ToneCurveName2012 > < crs:Temperature > 5033</crs:Temperature > < crs:Tint > 0</crs:Tint >
+</rdf:Description >
+</rdf:RDF >
+</x:xmpmeta > < ?xpacket end = 'w'? >
