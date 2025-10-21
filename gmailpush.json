@@ -1,0 +1,86 @@
+{
+  "name": "Validación Factura Chedraui",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "gmail-push/"
+      },
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [-600, -300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const raw = $json.message?.data;\nconst decoded = Buffer.from(raw, 'base64').toString('utf8');\nconst parsed = JSON.parse(decoded);\nreturn [{ json: parsed }];"
+      },
+      "name": "Decodificar PubSub",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [-400, -300]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "name": "mensaje",
+              "value": "={{ $json.mensaje }}"
+            },
+            {
+              "name": "origen",
+              "value": "={{ $json.origen }}"
+            },
+            {
+              "name": "hora",
+              "value": "={{ $now }}"
+            }
+          ]
+        }
+      },
+      "name": "Set Campos",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3,
+      "position": [-200, -300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const excelBinario = items[0].binary['attachment_2'];\nreturn [{\n  json: {\n    nombre: excelBinario.fileName || \"archivo.xlsx\",\n    tipo: excelBinario.mimeType || \"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\",\n    tamaño: excelBinario.fileSize || 0\n  },\n  binary: {\n    excel: excelBinario\n  }\n}];"
+      },
+      "name": "Extraer Excel",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [0, -300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "conditions": [
+            {
+              "leftValue": "={{$json.tipo}}",
+              "rightValue": "officedocument",
+              "operation": "contains"
+            }
+          ]
+        }
+      },
+      "name": "Validar Excel",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [200, -300]
+    },
+    {
+      "parameters": {
+        "binaryPropertyName": "excel",
+        "options": {
+          "headerRow": true,
+          "rawData": true
+        }
+      },
+      "name": "Leer Excel",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [400, -300]
+    },
+    {
+      "parameters": {
